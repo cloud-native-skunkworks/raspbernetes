@@ -21,7 +21,8 @@ This is more of a starting point than a complete guide.
 | Fans                      | [Amazon](https://www.amazon.co.uk/gp/product/B00HWGZT3I/ref=ppx_yo_dt_b_asin_title_o08_s00?ie=UTF8&psc=1)                                                                                                                                                                                                                                                                                                                                                                              | 2     | 7.50  | 15     |
 | USB to 3/4-Pin PWM PC Fan |  [Amazon](https://www.amazon.co.uk/gp/product/B09BV9CKXJ/ref=ppx_yo_dt_b_asin_image_o03_s00?ie=UTF8&psc=1)                                                                                                                                                                                                                                                                                                                                                                             | 1     | 8.59  | 8.59   |
 | PoE Hat                   | [Pi hut](https://thepihut.com/products/raspberry-pi-poe-plus-hat)                                                                                                                                                                                                                                                                                                                                                                                                                      | 4     | 19.80 | 79.20  |
-|                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |       |       | 788.71 |
+| MicroSD card              | [Amazon](https://www.amazon.co.uk/Gigastone-5-Pack-Class10-Nintendo-Samsung/dp/B07P192KFQ/ref=sr_1_7_sspa?crid=2XH3DF34VXK33&keywords=raspberry%2Bpi%2Bmicro%2Bsd%2Bcard%2B32gb&qid=1653984545&sprefix=raspebrry%2Bpi%2B%2Caps%2C58&sr=8-7-spons&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFONExXMVJLRUVMQVMmZW5jcnlwdGVkSWQ9QTA4MjQ4OTAxSk00NllHRFJDV1lEJmVuY3J5cHRlZEFkSWQ9QTAzMjk0NjUxVlpaQlk1NVFTNTFSJndpZGdldE5hbWU9c3BfbXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ&th=1)     | 1     | 24.98 | 24.98  |
+|                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |       |       | 813.69 |
 
 
 #### Note on router vs switch
@@ -36,3 +37,8 @@ If you want a switch like in the photo here are the details:
 
 - [Ubuntu 22.04](https://ubuntu.com/download/raspberry-pi)
 - [MicroK8s](https://ubuntu.com/tutorials/how-to-kubernetes-cluster-on-raspberry-pi?&_ga=2.92060063.463304713.1653983297-30417302.1648472081#1-overview)
+
+
+#### Note on installation
+
+It is important to install `/var/snap` under the SSD rather than the micro SD card for optimal performance.
