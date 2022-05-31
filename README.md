@@ -24,6 +24,14 @@ This is more of a starting point than a complete guide.
 |                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |       |       | 709.51 |
 
 
+#### Note on router vs switch
+
+In the photo I have a tp-link 5 port switch but the BoM includes a newer PoE router which I prefer. 
+This is useful if you want to transport your cluster and retain the IPAM information in the router. 
+The switch is managed but the router has a few other features that make it a better option. 
+If you want a switch like in the photo here are the details:
+- 40.97 (GBP) [Amazon](https://www.amazon.co.uk/TP-Link-TL-SG1005P-Ethernet-Configuration-Required/dp/B0769C24T1/ref=sr_1_3?adgrpid=74825115520&gclid=Cj0KCQjw-daUBhCIARIsALbkjSabwCFEOLxEmALeaLfBSJDHGUrWdh_ifiwSxUxGodLibDOFFd-cQvcaAvgsEALw_wcB&hvadid=356644610847&hvdev=c&hvlocphy=1007014&hvnetw=g&hvqmt=e&hvrand=3002664512498092811&hvtargid=kwd-317217279028&hydadcr=25426_1819469&keywords=tp+link+5+port+poe+switch&qid=1653983657&sr=8-3)
+
 ### Software
 
 - [Ubuntu 22.04](https://ubuntu.com/download/raspberry-pi)
