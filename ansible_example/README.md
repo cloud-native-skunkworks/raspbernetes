@@ -1,3 +1,8 @@
+## Management with tailscale
+
+<img src="../images/ts.png" width="400px" />
+
+
 ### Node management
 
 ```
