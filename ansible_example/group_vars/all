@@ -1,0 +1,5 @@
+---
+# file: group_vars/all
+ansible_connection: ssh 
+ansible_ssh_user: ubuntu
+ansible_ssh_pass: raspbernetes
