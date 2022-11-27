@@ -1,0 +1,51 @@
+---
+# tasks file for microk8s
+- name: Update the /etc/hosts file with node name
+  tags: etchostsupdate
+  become: yes
+  become_user: root
+  lineinfile:
+    dest: "/etc/hosts"
+    regexp: ".*\t{{ hostvars[item]['name']}}\t{{ hostvars[item]['name']}}"
+    line: "{{ item }}\t{{ hostvars[item]['name']}}"
+    state: present
+    backup: yes
+  register: etchostsupdate
+  when: inventory_hostname != "{{ item }}" or inventory_hostname == "{{ item }}"
+  with_items: "{{groups['local_addresses']}}"
+
+- name: Install MicroK8s
+  community.general.snap:
+    name: microk8s
+    classic: yes
+    state: present
+    channel: 1.25/stable
+
+- name: Install jq
+  apt:
+    name: jq
+    state: present
+
+- name: Get join token
+  when: inventory_hostname in groups["leader"]
+  shell: "microk8s add-node --token-ttl 666666 --format=json | jq .urls[0]"
+  register: join_token
+  changed_when: false
+
+- name: Print token
+  when: inventory_hostname not in groups["leader"]
+  debug:
+    msg: "Join token: {{ hostvars[groups['leader'][0]]['join_token'].stdout }}"
+
+- name: Join cluster
+  when: inventory_hostname not in groups["leader"]
+  shell: "microk8s join {{ hostvars[groups['leader'][0]]['join_token'].stdout }}"
+  changed_when: false
+  register: command_result
+  ignore_errors: True
+
+- name: Copy kubeconfig
+  when: inventory_hostname in groups["leader"]
+  shell: "microk8s config > /home/ubuntu/.kube/config"
+  register: command_result
+  changed_when: false

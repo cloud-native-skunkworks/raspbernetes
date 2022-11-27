@@ -1,0 +1,7 @@
+---
+- name: use microk8s role playbook
+  hosts: all
+  user: ubuntu
+  become: true
+  roles:
+    - role: microk8s

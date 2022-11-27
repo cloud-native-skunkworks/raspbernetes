@@ -1,0 +1,12 @@
+[leader]
+100.104.78.70
+[local_addresses]
+192.168.88.239 name=raspbernetes-0
+192.168.88.246 name=raspbernetes-1
+192.168.88.249 name=raspbernetes-2
+192.168.88.240 name=raspbernetes-3
+[tailscale]
+100.104.78.70
+100.119.138.43
+100.70.58.39
+100.112.40.6
